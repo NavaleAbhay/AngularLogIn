@@ -8,7 +8,6 @@ import { AuthserviceService } from './authservice.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { HttpClientModule} from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
 
 
@@ -39,7 +38,6 @@ export const routes:Routes=[
     RouterModule.forRoot(routes),
     CommonModule,
     FormsModule,
-    HttpClientModule,
 
   ],
   providers: [AuthserviceService],

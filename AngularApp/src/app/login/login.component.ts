@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, resolveForwardRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthserviceService } from '../authservice.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,10 @@ import { AuthserviceService } from '../authservice.service';
 })
 export class LoginComponent {
   
-    userName:string |any;
-    password:string |any
+   user:User={
+     contactNumber: '',
+     password: ''
+   }
    loggedIn:any;
    role:any;
   
@@ -18,16 +21,9 @@ export class LoginComponent {
   
   
   logIn(){
-    if(this.svc.logIn(this.userName,this.password)){
-      console.log("Login button clicked");
-      this.loggedIn=true;
-      console.log("user is valid");
-      this.router.navigate(['/home']);
-      return true;
-    }
-    else{
-      console.log("Invalid login");
-      return false;
-    }
+  this.svc.logIn(this.user).subscribe((response)=>{
+    console.log(response.token)
+    console.log(response) 
+   })
   }
 }

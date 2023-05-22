@@ -1,46 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient,HttpHeaders,HttpErrorResponse} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthserviceService {
 
-  constructor() { }
-
-  users:any[]=[
-  {
-    "userId":1,
-    "userName":"Abhay",
-    "password":"password",
-    "role":"Admin"
-  },
-  {
-    "userId":2,
-    "userName":"Sahil",
-    "password":"password",
-    "role":"User"
-  },
-  {
-    "userId":3,
-    "userName":"Shubham",
-    "password":"password",
-    "role":"User"
-  },
-  {
-    "userId":4,
-    "userName":"Jayesh",
-    "password":"password",
-    "role":"Admin"
-  }
-];
-
-
-  logIn(username:string,password:string):boolean{
-    const user=this.users.find((u)=>u.userName ===username && u.password===password)
-    if(user){
-      localStorage.setItem("role",user.role);
-       return true;
-    }
-    return false;
-  }
+  constructor(private httpClient:HttpClient) { }
+  logIn(user:User):Observable<any>{
+    console.log("inside request")
+    let url ="http://localhost:5148/api/auth/authenticate/";
+      return this.httpClient.post<User>(url,user);
+      }
 }

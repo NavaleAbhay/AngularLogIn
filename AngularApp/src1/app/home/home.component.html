@@ -1,0 +1,5 @@
+<p>home works!</p>
+<a  [routerLink]="['/home']">Home</a> | 
+<a *ngIf="statusAdmin" [routerLink]="['/home/contact']">Contact</a> |
+<a *ngIf="statusUser" [routerLink]="['/home/privacy']">Privacy</a>
+<router-outlet></router-outlet>
