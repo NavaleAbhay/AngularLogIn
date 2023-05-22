@@ -23,7 +23,6 @@ export class LoginComponent {
   logIn(){
   this.svc.logIn(this.user).subscribe((response)=>{
     console.log(response.token)
-    localStorage.setItem("jwt",response.token)
     console.log(response) 
    })
   }
