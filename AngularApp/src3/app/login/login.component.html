@@ -1,0 +1,12 @@
+<form (ngSubmit)="logIn()">
+    <label for="username">contactNumber:</label>
+    <input type="text" id="username" name="contactNumber" [(ngModel)]="user.contactNumber" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+
+    <button type="submit">Login</button>
+</form>
+  <div *ngIf="loggedIn">
+    <app-home></app-home>
+  </div>

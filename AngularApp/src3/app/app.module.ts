@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
-import { SigninComponent } from './signin/signin.component';
 
 
 export const routes:Routes=[
@@ -33,8 +32,7 @@ export const routes:Routes=[
     LoginComponent,
     HomeComponent,
     PrivacyComponent,
-    ContactComponent,
-    SigninComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
