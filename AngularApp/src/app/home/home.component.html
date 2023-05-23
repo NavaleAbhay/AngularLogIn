@@ -1,7 +1,5 @@
-<a  [routerLink]="['/home']">Home</a> | 
-<a *ngIf="statusAdmin" [routerLink]="['/home/contact']">Contact</a> |
-<a *ngIf="statusUser" [routerLink]="['/home/privacy']">Privacy</a>
-<a *ngIf="statusUser" [routerLink]="['/home/privacy']">Privacy</a>
-<a *ngIf="statusUser" [routerLink]="['/home/privacy']">Privacy</a>
-<a *ngIf="statusUser" [routerLink]="['/home/privacy']">Privacy</a>
+<p>Home</p>
+<div>
+    <a *ngIf="status" [routerLink]="['contact']">Contact</a> | <a *ngIf="status" [routerLink]="['privacy']">Privacy</a>
+</div>
 <router-outlet></router-outlet>

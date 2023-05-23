@@ -8,24 +8,19 @@ import { AuthserviceService } from './authservice.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
 import { SigninComponent } from './signin/signin.component';
 
 
-export const routes:Routes=[
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  {
-    path: 'home',
-    component: HomeComponent,
-    children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'contact', component: ContactComponent },
-      { path: 'privacy', component: PrivacyComponent }
-    ]
-  },
+  { path: 'contact', component: ContactComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'privacy', component: PrivacyComponent }
 ]
+
+
 
 @NgModule({
   declarations: [

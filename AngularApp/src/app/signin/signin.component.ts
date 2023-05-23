@@ -14,4 +14,10 @@ export class SigninComponent implements OnInit {
     
   }
 
+  login(){
+    this.status=true;
+  }
+  logout(){
+    this.status=false;
+  }
 }

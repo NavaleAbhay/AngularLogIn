@@ -1,5 +1,6 @@
-
-<button type="submit" (click)="status=true">SignIn</button>
+<!-- <a [routerLink]="['/']">Sign In</a> -->
+<button type="submit" (click)="login()" *ngIf="status==false">SignIn</button>
+<button type="submit" (click)="logout()" *ngIf="status==true">SignOut</button>
 <div *ngIf="status">   
 <app-login></app-login>
 </div>
